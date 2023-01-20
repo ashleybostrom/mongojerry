@@ -9,14 +9,20 @@ const {
     deleteFriend
 } = require('../');
 
+// /api/users get and post
+router.route('/').get(getUser).post(createUser);
+
+// /api/users/:id get one user put and delete
+router.route('/:id').get(getUserById).put(updateUser).delete(deleteUser);
+
 // /api/thoughts get and post
 router.route('/').get(getAllThoughts).post(createThought);
 
 // /api/thoughts/:id get one thought put and delete
 router.route('/:id').get(getThoughtById).put(updateThought).delete(deleteThought);
 
-// /api/thoughts/:thoughtId/reactions post and delete
-router.route('/:thoughtId/reactions').post(createReaction).delete(deleteReaction);
+// /api/users/:userId/friends/:friendId post and delete
+router.route('/:userId/friends/:friendId').post(addFriend).delete(deleteFriend);
 
 //export
 module.exports = router;
