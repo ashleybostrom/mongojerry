@@ -29,7 +29,7 @@ Once the above steps are complete, you are ready to run your application by typi
 Your application is now ready.
 
 ## Walk-Through Video
-* [![Watch the video]]
+* [![Watch the video]](https://drive.google.com/file/d/1MBsTaKxsEtEU3UPxggus61xG2Lf2e5yi/view)
 
 ## Screenshot
 
