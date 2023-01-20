@@ -1,6 +1,6 @@
 // import express and routes
 
-const express = require('express').Router;
+// const express = require('express').Router;
 const userRoutes = require('./userRoutes');
 const thoughtRoutes = require('./thoughtRoutes');
 
