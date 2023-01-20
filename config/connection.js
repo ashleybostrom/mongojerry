@@ -2,7 +2,7 @@
 
 const { connect, connection } = require('mongoose');
 
-// Connect to MnongoDB Atlas for Heroku App or run local
+// Connect to MongoDB Atlas for Heroku App or run local
 
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/your-db-name';
 
