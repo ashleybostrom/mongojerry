@@ -65,7 +65,7 @@ deleteThought(req, res) {
         .catch((err) => res.status(500).json(err));
 },
 // add reaction
-addReaction(req, res) {
+createReaction(req, res) {
     Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
         { $push: { reactions: req.body } },
