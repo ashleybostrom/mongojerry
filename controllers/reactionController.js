@@ -1,5 +1,4 @@
 // import models
-
 const { Reaction, Thought, User } = require('../models');
 
 // import utils
