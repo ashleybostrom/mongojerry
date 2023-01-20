@@ -15,12 +15,6 @@ router.route('/').get(getUser).post(createUser);
 // /api/users/:id get one user put and delete
 router.route('/:id').get(getUserById).put(updateUser).delete(deleteUser);
 
-// /api/thoughts get and post
-router.route('/').get(getAllThoughts).post(createThought);
-
-// /api/thoughts/:id get one thought put and delete
-router.route('/:id').get(getThoughtById).put(updateThought).delete(deleteThought);
-
 // /api/users/:userId/friends/:friendId post and delete
 router.route('/:userId/friends/:friendId').post(addFriend).delete(deleteFriend);
 
