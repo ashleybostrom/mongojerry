@@ -1,5 +1,5 @@
 //import
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 //create usr schema
 const userSchema = new Schema(
