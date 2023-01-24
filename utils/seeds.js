@@ -1,15 +1,15 @@
 const connection = require('../config/connection');
-const { User, Thought, Reaction } = require('../models');
-const { users, thoughts, reactions, getRandom01, getRandomItem, getRandomNumber } = require('./data');
-const { ObjectId } = require('mongoose').Types;
+const { User, Thought } = require('../models');
+const { userSeeds, thoughtSeeds } = require('./data');
+
 connection.on('error', (err) => err);
 
 connection.once('open', async () => {
-    console.info('connected');
+    console.log('connected');
     await User.deleteMany({});
     await Thought.deleteMany({});
 
-    await user.forEach(user => {
+    await users.forEach(user => {
         User.create({
             username: user,
             email: `${user}@place.com`,
