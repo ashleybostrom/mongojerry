@@ -1,13 +1,13 @@
 // import express and routes
 const router = require('express').Router();
-
-// const express = require('express').Router;
-const userRoutes = require('./userRoutes');
-const thoughtRoutes = require('./thoughtRoutes');
+const apiRoutes = require('./api');
 
 // create router
-router.use('/users', userRoutes);
-router.use('/thoughts', thoughtRoutes);
+router.use('/api', apiRoutes);
+
+router.use((req, res) => {
+    return res.send('Error');
+});
 
 // export router
 module.exports = router;
