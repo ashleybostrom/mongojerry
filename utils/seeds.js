@@ -4,24 +4,20 @@ const { userSeeds, thoughtSeeds } = require('./data');
 
 connection.on('error', (err) => err);
 
+// Connection to mongoDB
 connection.once('open', async () => {
-    console.log('connected');
+    // D   elete entries in the database
     await User.deleteMany({});
-    await Thought.deleteMany({});
+    console.log('connected');
+    
+    const users = userSeeds;
+    const thoughts = thoughtSeeds;
 
-    await users.forEach(user => {
-        User.create({
-            username: user,
-            email: `${user}@place.com`,
-            thoughts: [],
-        });
-    });
+    // Wait for users and thoughts to be inserted into database
+    await User.collection.insertMany(users);
+    await Thought.collection.insertMany(thoughts);
 
-    let userCount = await User.find({}).exec();
-
-    console.log("Count :", userCount);
-   
-
-
+    // Start seeding
+    console.log('\n Seeds created! \n');
     process.exit(0);
 });
