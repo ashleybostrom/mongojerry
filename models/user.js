@@ -14,7 +14,6 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            required: true,
             validator: (value) => {
                 return validator.isEmail(value);
             }
