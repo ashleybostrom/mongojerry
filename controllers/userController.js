@@ -1,8 +1,8 @@
-const { User, Thought } = require('../models');
+const { User } = require('../models');
 
 module.exports = {
     //All users
-    getAllUsers(req, res) {
+    getAllUsers(_req, res) {
         User.find({})
             .then((users) => !users ? res.status(404).json({ message: 'No users found' }) : res.json(users))
             .catch((err) => res.status(500).json(err));
