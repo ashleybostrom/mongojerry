@@ -2,7 +2,7 @@
 const { Schema, model } = require('mongoose');
 
 // import thought model
-const thoughtSchema = require('./thought');
+const thoughtSchema = require('./Thought');
 
 //create usr schema
 const userSchema = new Schema(

@@ -6,7 +6,7 @@ connection.on('error', (err) => err);
 
 // Connection to mongoDB
 connection.once('open', async () => {
-    // D   elete entries in the database
+    // Delete entries in the database
     await User.deleteMany({});
     console.log('connected');
     
