@@ -3,13 +3,13 @@ const { User } = require('../models');
 module.exports = {
     //All users
     getAllUsers(req, res) {
-        User.find({})
+        User.find()
             .then((user) => res.json(user))
             .catch((err) => res.status(500).json(err));
     },
     //One user
     getUserById(req, res) {
-        User.findOne({ _id: req.params.id }).populate('thoughts').populate('friends')
+        User.findOne({ _id: req.params.userId })
             .then((user) => !user ? res.status(404).json({ message: 'No user found with this id' }) : res.json(user))
             .catch((err) => res.status(500).json(err));
     },
@@ -43,11 +43,13 @@ module.exports = {
     //Delete friend
     deleteFriend(req, res) {
         User.findOneAndUpdate({ _id: req.params.userId },
-            { $pull: { friends: req.params.friendId } })
+            { $pull: { friends: req.params.friendId } },
+        )
             .then((user) => !user ? res.status(404).json({ message: 'No user found with this id' }) : res.json(user))
             .catch((err) => res.status(500).json(err))
-        },
-    };
+    },
+};
+
 
 
 
