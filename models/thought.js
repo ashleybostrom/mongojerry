@@ -1,6 +1,6 @@
 // inports
 const { Schema, model } = require('mongoose');
-const reactionSchema = require('./reaction');
+const reactionSchema = require('./Reaction');
 
 //thought schema
 const thoughtSchema = new Schema(
