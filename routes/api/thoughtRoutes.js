@@ -15,7 +15,7 @@ const {
 router.route('/').get(getAllThoughts).post(createThought);
 
 // get single thought, update thought, delete thought
-router.route('/:thoughtId').get(getSingleThought).post(updateThought).delete(deleteThought);
+router.route('/:thoughtId').get(getSingleThought).put(updateThought).delete(deleteThought);
 
 // create reaction and delete reaction
 router.route('/:thoughtId/reaction').post(createReaction).delete(deleteReaction);

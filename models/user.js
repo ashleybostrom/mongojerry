@@ -1,6 +1,9 @@
 //import
 const { Schema, model } = require('mongoose');
 
+// import thought model
+const thoughtSchema = require('./thought');
+
 //create usr schema
 const userSchema = new Schema(
     {
@@ -14,20 +17,18 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            validator: (value) => {
-                return validator.isEmail(value);
-            }
+            match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
         },
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Thought'
-            }
+                ref: 'thought'
+            },
         ],
         friends: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'User'
+                ref: 'user'
             }
         ]
     },
@@ -36,14 +37,8 @@ const userSchema = new Schema(
             virtuals: true,
             getters: true
         },
-        id: false
     }
 );
-
-//total count of friends
-userSchema.virtual('friendCount').get(function() {
-    return this.friends.length;
-});
 
 // create user model
 const User = model('User', userSchema);
