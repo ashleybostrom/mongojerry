@@ -13,7 +13,7 @@ const thoughtSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now(),
+            default: Date.now()
         },
         username: {
             type: String,
@@ -25,7 +25,6 @@ const thoughtSchema = new Schema(
     {
         toJSON: {
             virtuals: true,
-            getters: true
         },
         id: false
     }
@@ -34,7 +33,7 @@ const thoughtSchema = new Schema(
 
 // total count
 thoughtSchema.virtual('reactionCount').get(function() {
-    return this.reactions.length;
+    return this.reactions.length
 });
 
 // User model
