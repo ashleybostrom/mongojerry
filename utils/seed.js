@@ -2,20 +2,22 @@ const connection = require('../config/connection');
 const { User, Thought } = require('../models');
 const { userSeeds, thoughtSeeds } = require('./data');
 
-connection.on('error', (err) => err);
+// Start seeding
+console.time('seeding');
 
 // Connection to mongoDB
 connection.once('open', async () => {
-    console.log('connected');
     
-    const users = userSeeds;
-    const thoughts = thoughtSeeds;
-
     // Wait for users and thoughts to be inserted into database
     await User.collection.insertMany(users);
     await Thought.collection.insertMany(thoughts);
 
+    const users = userSeeds;
+    const thoughts = thoughtSeeds;
+
     // Start seeding
+    console.table(users);
+    console.table(thoughts);
     console.log('\n Seeds created! \n');
     process.exit(0);
 });

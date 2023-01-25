@@ -5,7 +5,7 @@ const { connect, connection } = require('mongoose');
 // Connect to MongoDB
 connect('mongodb://localhost:27017/your-db-name', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
 });
 
 // Export
