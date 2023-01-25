@@ -19,8 +19,8 @@ connection.once('open', async () => {
     // const thoughts = thoughtSeeds;
 
     // Start seeding
-    console.table(users);
-    console.table(thoughts);
+    console.table(User);
+    console.table(Thought);
     console.log('\n Seeds created! \n');
     process.exit(0);
 });
