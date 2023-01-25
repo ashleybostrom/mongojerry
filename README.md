@@ -30,8 +30,14 @@ Once the above steps are complete, you are ready to run your application by typi
 Your application is now ready.
 
 ## Walk-Through Video
-* [![Watch the video]](https://drive.google.com/file/d/1MBsTaKxsEtEU3UPxggus61xG2Lf2e5yi/view)
+* [![Watch the video]](https://drive.google.com/file/d/1r4oaj8U25aPYx2nYdwyvuoIuyRZSg07O/view)
 
 ## Screenshot
+![Get all users](./assets/getallusers.png)
+![Update users](./assets/updateusers.png)
+![Get all thoughts](./assets/getallthoughts.png)
+![Update thoughts](./assets/updatethoughts.png)
+![Delete a thought](./assets/deletethought.png)
 
 ## Links
+![Github Repo](https://github.com/ashleybostrom/mongojerry)
