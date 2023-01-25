@@ -9,11 +9,14 @@ console.time('seeding');
 connection.once('open', async () => {
     
     // Wait for users and thoughts to be inserted into database
-    await User.create(users);
-    await Thought.create(thoughts);
+    await User.deleteMany({});
+    await Thought.deleteMany({});
 
-    const users = userSeeds;
-    const thoughts = thoughtSeeds;
+    await User.create(userSeeds);
+    await Thought.create(thoughtSeeds);
+
+    // const users = userSeeds;
+    // const thoughts = thoughtSeeds;
 
     // Start seeding
     console.table(users);
