@@ -1,5 +1,6 @@
 const { Schema } = require('mongoose');
 
+// Reaction schema
 const reactionSchema = new Schema(
     {
         reactionId: {
@@ -19,7 +20,8 @@ const reactionSchema = new Schema(
             type: Date,
             default: Date.now()
         }
-    },
+    }
 );
 
+// Export reaction schema
 module.exports = reactionSchema;
