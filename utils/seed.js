@@ -6,8 +6,6 @@ connection.on('error', (err) => err);
 
 // Connection to mongoDB
 connection.once('open', async () => {
-    // Delete entries in the database
-    await User.deleteMany({});
     console.log('connected');
     
     const users = userSeeds;
