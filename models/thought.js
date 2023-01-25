@@ -1,6 +1,6 @@
 // inports
 const { Schema, model } = require('mongoose');
-const reactionSchema = require('./Reaction');
+const reactionSchema = require('./reaction');
 
 //thought schema
 const thoughtSchema = new Schema(
@@ -13,11 +13,12 @@ const thoughtSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now
+            default: Date.now(),
         },
         username: {
             type: String,
-            required: true
+            required: true,
+            unique: true,
         },
         reactions: [reactionSchema]
     },
@@ -37,7 +38,7 @@ thoughtSchema.virtual('reactionCount').get(function() {
 });
 
 // User model
-const Thought = model('Thought', thoughtSchema);
+const Thought = model('thought', thoughtSchema);
 
 // export
 module.exports = Thought;
