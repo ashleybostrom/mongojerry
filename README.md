@@ -22,6 +22,7 @@ This program builds an API for a social network web app where users post their t
 1. **Clone:** In GitBash (Windows) or Terminal (Mac), type `git clone < $link >`
 1. **NPM:** From the root directory, type `npm init` to install NPM (Node Package Manager)
 1. **Dependencies:** To install all dependencies needed, type `npm i`
+1. **Seeding:** To seed your database, type `npm run seeds`
 
 ## Usage
 Once the above steps are complete, you are ready to run your application by typing `npm start`
